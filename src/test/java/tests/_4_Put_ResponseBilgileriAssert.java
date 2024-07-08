@@ -8,7 +8,7 @@ import org.junit.Test;
 import static io.restassured.path.json.JsonPath.given;
 import static io.restassured.RestAssured.given;
 
-public class Put_ResponseBilgileriAssert {
+public class _4_Put_ResponseBilgileriAssert {
     /*
     https://jsonplaceholder.typicode.com/posts/70 url’ine asagidaki Json formatindaki body ile bir PUT request gonderdigimizde
     {

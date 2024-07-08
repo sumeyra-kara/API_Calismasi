@@ -3,7 +3,7 @@ package tests;
 import org.json.JSONObject;
 import org.junit.Test;
 
-public class JsonObjesiOlusturma {
+public class _3_JsonObjesiOlusturma {
     /*
     Asagidaki JSON Objesini olusturup konsolda yazdirin.
     {

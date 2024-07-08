@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class Get_ResponseBilgileriAssertion {
+public class _02_Get_ResponseBilgileriAssertion {
     /*
     https://restful-booker.herokuapp.com/booking/10 url’ine bir GET request
     gonderdigimizde donen Response’un,

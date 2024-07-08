@@ -5,11 +5,9 @@ import io.restassured.response.Response;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 
-import java.util.regex.Matcher;
-
 import static io.restassured.RestAssured.given;
 
-public class Get_ResponseBodyTesti {
+public class _5_Get_ResponseBodyTesti {
     /*
           https://jsonplaceholder.typicode.com/posts/44 url'ine bir GET request yolladigimizda donen Response’in
       status code'unun 200,

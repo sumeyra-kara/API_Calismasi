@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class Get_ApiSorgulama_01 {
+public class _01_Get_ApiSorgulama {
 
     // postman'Da yazilanlar burada api otomasyonu yapiyoruz
     /*
