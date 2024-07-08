@@ -1,5 +1,8 @@
 package tests;
 
+import org.json.JSONObject;
+import org.junit.Test;
+
 public class _9_JsonPathIleBodyTesti {
     /*
     {
@@ -25,4 +28,26 @@ public class _9_JsonPathIleBodyTesti {
         oldugunu test edin
 
      */
+
+
+    @Test
+    public void post1(){
+
+        // url ve reqquest body hazirla
+        String url = "https://restful-booker.herokuapp.com/booking";
+
+        // request body hazirla
+
+        JSONObject bookingDates = new JSONObject();
+        bookingDates.put("checkin","2021-06-01");
+        bookingDates.put("checkout","2021-06-10");
+
+        JSONObject booking = new JSONObject();
+        booking.put("firstname","Ali");
+        booking.put("lastname","Bak");
+        booking.put("totalprice",500);
+        booking.put("depositpaid",false);
+        booking.put("additionalneeds","wi-fi");
+        booking.put("bookingdates",bookingDates);
+    }
 }
