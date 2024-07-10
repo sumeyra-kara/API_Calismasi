@@ -1,6 +1,5 @@
-package tests;
+package test;
 
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.hamcrest.Matchers;
 import org.junit.Test;

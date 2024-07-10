@@ -1,13 +1,10 @@
-package tests;
+package test;
 
 import io.restassured.response.Response;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 
-import javax.swing.plaf.PanelUI;
-
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
 
 public class _7_GetBodyTekrarlardanKurtulma {
     /*
