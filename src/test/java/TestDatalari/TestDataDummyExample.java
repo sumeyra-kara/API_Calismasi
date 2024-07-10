@@ -8,7 +8,7 @@ public class TestDataDummyExample {
     public static int basariliSorguStatusCode=200;
     public static String contentType="application/json";
 
-    /*
+    /**
     {
                 "status":"success",
                 "data":{
@@ -45,7 +45,7 @@ public class TestDataDummyExample {
     }
 
 
-    /*
+    /**
     {
             "status":"success",
             "data":{
