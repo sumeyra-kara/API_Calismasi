@@ -20,9 +20,9 @@ public class _6_Post_ResponseBodyTesti {
         status code’unun 201,
         ve content type’inin application/json
         ve Response Body'sindeki,
-        "title"'in "API" oldugunu
-        "userId" degerinin 100'den kucuk oldugunu
-        "body" nin "API" kelimesi icerdigini
+        "title"'in "API" oldugunu (Matchers.equalTo)
+        "userId" degerinin 100'den kucuk oldugunu (Matchers.lessThan)
+        "body" nin "API" kelimesi icerdigini (Matchers.containsString)
         test edin
      */
 

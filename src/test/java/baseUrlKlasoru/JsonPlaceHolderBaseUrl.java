@@ -10,7 +10,7 @@ public class JsonPlaceHolderBaseUrl {
     @Before // her methottan onnce otomatik olarak calisiyor
     public void setUp(){
         // objeye degerler atiyoruz
-        specJsonPlace= new RequestSpecBuilder()
+        specJsonPlace = new RequestSpecBuilder()
                 .setBaseUri("https://jsonplaceholder.typicode.com")
                 .build();
     }

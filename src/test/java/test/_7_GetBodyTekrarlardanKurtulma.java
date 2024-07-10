@@ -28,12 +28,10 @@ public class _7_GetBodyTekrarlardanKurtulma {
 
         // 2- Expected Data
         // 3- Response'i kaydet
-
         Response response = given().when().get(url);
         response.prettyPrint();
 
         // 4- assertion
-
         response
                 .then().assertThat()
                         .statusCode(200)

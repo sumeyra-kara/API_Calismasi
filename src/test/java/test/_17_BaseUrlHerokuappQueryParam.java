@@ -37,7 +37,7 @@ public class _17_BaseUrlHerokuappQueryParam  extends HerokuappBaseUrl {
         // 1- url hazirla
         specHerokuApp.pathParam("pp1","booking");
 
-        // 2-
+        // 2- expected Data hazirla varsa
         // 3- Response'i kaydet
         Response response = given().spec(specHerokuApp).when().get("/{pp1}");
         response.prettyPrint();
