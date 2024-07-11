@@ -14,14 +14,16 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
 public class _26_Post_Pojo extends HerokuappBaseUrl {
+
+
      /**
     https://restful-booker.herokuapp.com/booking url’ine
     asagidaki body'ye sahip bir POST request gonderdigimizde
     donen response’un asagidaki gibi oldugunu test edin.
     	                Request body
     	           {
-    	                "firstname" : "Ahmet",
-    	                "lastname" : “Bulut",
+    	                "firstname" : "Ali",
+    	                "lastname" : “Bak",
     	                "totalprice" : 500,
     	                "depositpaid" : false,
     	                "bookingdates" : {
@@ -64,14 +66,14 @@ public class _26_Post_Pojo extends HerokuappBaseUrl {
         //bookingdatesPojo= new HerokuappBookingDatesPojo("2021-06-01","2021-06-10");
 
         //HerokuappRequestBodyPojo bookingPojo=
-                //new HerokuappRequestBodyPojo("Ahmet","Bulut",500,false,bookingdatesPojo,"wi-fi");
+                //new HerokuappRequestBodyPojo("Ali","Bak",500,false,bookingdatesPojo,"wi-fi");
 
         /*
         PojoHerokuappResponseBody{
             bookingid=24,
             booking= PojoHerokuappRequestBody{
-                        firstname='Ahmet',
-                        lastname='Bulut',
+                        firstname='Ali',
+                        lastname='Bak',
                         totalprice=500,
                         depositpaid=false,
                         bookingdates=PojoHerokuappBookingdates{

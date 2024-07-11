@@ -4,9 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data // getter setter ve toString olusturur
-@AllArgsConstructor // constructorlari olusturur
-@NoArgsConstructor // parametresiz constructorlari olusturur
+
 public class HerokuappResponseBody { // HerokuappExpBodyPojo // en distaki json
 
     // 1- tum variable'lari private olarak olustur

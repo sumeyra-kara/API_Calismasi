@@ -4,11 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data // getter setter ve toString olusturur
-@AllArgsConstructor // constructorlari olusturur
-@NoArgsConstructor // parametresiz constructorlari olusturur
+
 public class PlaceHolderRequestBodyPOJO {
     /**
+     * @Data // getter setter ve toString olusturur
+     * @AllArgsConstructor // constructorlari olusturur
+     * @NoArgsConstructor // parametresiz constructorlari olusturur
+     *
+     *
     {
             "title":"Ahmet",
             "body":"Merhaba",

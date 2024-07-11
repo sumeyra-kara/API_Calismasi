@@ -3,9 +3,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
-@Data // getter setter ve toString olusturur
-@AllArgsConstructor // constructorlari olusturur
-@NoArgsConstructor // parametresiz constructorlari olusturur
+
 public class HerokuappBookingDatesPojo { // en icteki kisim
 
     // 1- tum variable'lari private olarak olustur
