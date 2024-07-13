@@ -80,6 +80,6 @@ public class _21_Post_TestDataKullanimi extends HerokuappBaseUrl {
                                                                 ,responseJP.get("booking.bookingdates.checkin"));
 
         assertEquals(expectedData.getJSONObject("booking").getJSONObject("bookingdates").get("checkout")
-                                         ,responseJP.get("booking.bookingdates.checkout"));
+                                                ,responseJP.get("booking.bookingdates.checkout"));
     }
 }
