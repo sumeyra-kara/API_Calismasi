@@ -11,9 +11,9 @@ public class Pojo {
     - Karmasik json objeleri varsa response'dan sonra then.assertThat ile body'i test edeceksek JsonPath ile yapariz
 
     - respose'i testNg ya da Junit ile test etmek istersek response json Path'E cevrilir
-    hazirladigimiz expexteddata'lar jsonObject türünde oluyor.
+      hazirladigimiz expexteddata'lar jsonObject türünde oluyor.
         karmasik jsonpath test ederken -----> aralarina nokta koyarak kolayca
-        karmasik jsonObject test ederken ----> katmanli her bir katmana ayri method ile giriyoruz getJsonObject().get(-)
+        karmasik jsonObject test ederken ----> katmanli her bir katmana ayri method ile giriyoruz getJsonObject().get(...)
 
     - expexted data formati (jsonObject, map, pojo) olarak hazirladik
 

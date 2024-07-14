@@ -32,8 +32,8 @@ public class _3_JsonObjesiOlusturma {
     "firstname":"Jim",
     "additionalneeds":"Breakfast",
     "bookingdates":{
-    "checkin":"2018-01-01",
-    "checkout":"2019-01-01"
+        "checkin":"2018-01-01",
+        "checkout":"2019-01-01"
     },
     "totalprice":111,
     "depositpaid":true,

@@ -36,8 +36,8 @@ public class _26_Post_Pojo extends HerokuappBaseUrl {
     	            {
                     "bookingid":24,
                     "booking":{
-                        "firstname":"Ahmet",
-                        "lastname":"Bulut",
+                        "firstname":"Ali",
+                        "lastname":"Bak",
                         "totalprice":500,
                         "depositpaid":false,
                         "bookingdates":{
