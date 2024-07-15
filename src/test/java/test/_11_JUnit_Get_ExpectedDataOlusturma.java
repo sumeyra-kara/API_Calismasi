@@ -38,18 +38,18 @@ public class _11_JUnit_Get_ExpectedDataOlusturma {
 
         // 3- response'i kaydet
 
-        Response response = given().when().get(url); // get methodu oldugu icin baska seylere ihtiyac yok
+        Response response = given().when().get(url); // get methodu oldugu icin baska seylere ihtiyac yok body vs gibi
         // response.prettyPrint();
         response.prettyPeek(); // prettyprint'Den farkli olarak bu header degerleri ile birlikte yazdirilir
 
         // 4- Assert
 
-        JsonPath responseJsonPath=response.jsonPath(); // actual degerler icin
+        JsonPath responseJsonPath=response.jsonPath(); // actual degerler icin - burada jsonPath'e cevirdik assert icin cunku expdata jsonObjectmodunda
 
-        assertEquals(expData.get("userId"), responseJsonPath.getInt("userId"));
-        assertEquals(expData.get("id"), responseJsonPath.getInt("id"));
-        assertEquals(expData.get("body"), responseJsonPath.getString("body"));
-        assertEquals(expData.get("title"), responseJsonPath.getString("title"));
+        assertEquals(expData.get("userId"), responseJsonPath.get("userId"));
+        assertEquals(expData.get("id"), responseJsonPath.get("id"));
+        assertEquals(expData.get("body"), responseJsonPath.get("body"));
+        assertEquals(expData.get("title"), responseJsonPath.get("title"));
 
     }
 }

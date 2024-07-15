@@ -38,7 +38,7 @@ public class _6_Post_ResponseBodyTesti {
 
         System.out.println("reqBody = " + reqBody);
 
-        // 2- expected data hazirla (ama bizim yok
+        // 2- expected data hazirla (ama bizim yok)
         // 3- response'i hazirla
 
         Response response = given()
@@ -53,7 +53,7 @@ public class _6_Post_ResponseBodyTesti {
                             .contentType("application/json")
                             .body("title", Matchers.equalTo("API"))
                             .body("userId", Matchers.lessThan(100))
-                            .body("title", Matchers.containsString("API"));
+                            .body("body", Matchers.containsString("API"));
 
 
 

@@ -6,7 +6,7 @@ import org.junit.Before;
 
 public class BaseUrlDummyExample {
 
-    protected RequestSpecification specDummyExample;
+    protected RequestSpecification specDummyExample; //  Olusturdugumuz objeyi child class’lardan ulasabilme icin protected yapalim
 
     @Before
     public void setup(){

@@ -41,6 +41,7 @@ public class InformationenFürAlle {
 
     - Get icin body hazirlamya gerek yoktur
       Ama post Put Patch icin body gereklidir cunku yeni kayitdir veya degiiiskligi icin bilgi gereklidir
+    - path parametresi varsa mutlaka yazilmak zorunda endpoint olarak. query param ama belirlemesek de olur
     - response io.restassured 'den import edilmek zorunda
     - prettyPrint() ile yazdirma yapabiliriz. prettyPekk diyince de header degerleri ile birlikte yazdirir
     - degerlerin testi icin
@@ -49,6 +50,18 @@ public class InformationenFürAlle {
             3. JsonPath
             4. Map (Dta turu belirtmek zorundasin olustururken)
             5. Pojo
+            6. MATCHERS ile body testi yapilabilir
+
+     *** FRAMEWORK ICIN ***
+       - test class'larinin yaninda baseUrl class'i olusturulabilir. cunku defalarca uzun uzun yazmaya gerek yok.
+       - baseUrl'in degistigi durumda da her testte tek rek degiistirme yerine baseUrl class'inda dinamik olan seyi degistirmek yeterli oluyor mesela.(avantaj)
+       -    * Her sorguda Base url’i tekrar yazmak hem zor, hem de kodlama mantigi acisindan dusuk  kalitededir.
+            * Bir framework olustururken hedeflenen temel amaclardan biri de framework’u dinamik yapmaktir.
+            * Bunu saglamak icin base url ayri bir class’da olusturulur, test yaptigimiz classlar
+            * inheritance metotlarini kullanarak base url’i bulundugu class’dan kullanirlar.
+            * Boylece base url’de yapilacak bir degisiklikte tum class’lardaki url’leri kontrol edip duzeltmek
+            * yerine base url’in bulundugu class’da tek bir degisiklik yapmak yeterli olmaktadir
+
 
      ** Json Object ***
 
@@ -89,10 +102,17 @@ public class InformationenFürAlle {
      -
 
 
-
-
-
-
+    **** MATCHERS Classi *********
+    - mesela --- >  response.then().assertThat().body("userId", Matchers.equalTo(5)) seklinde test ediliyor
+             DIGER METHODLAR :
+            / Matchers.is
+            / Matchers.lessThan ( su degerden kucuk oldugunu)
+            / Matchers.containsString (sunu icerdigi)  methodlari vardir mesela
+            / Matchers.hasItem (mesela o list icinde bu var mi)
+            / .body("data.employee_age",hasItems(61,21,35)); has.Itmes diyince icine birden fazla sey sorgulanabilir bir list/array icin
+            / Matchers.hasSize(24) (bu listin icinde 24 eleman mi var)     .body("data.id", Matchers.hasSize(24))
+            / Matchers.nullValue() (su key'in bos oldugu)
+            / Matchers.notNullValue() (su key'in bos oldugu)
 
 
      *** POJO *********
@@ -108,6 +128,9 @@ public class InformationenFürAlle {
     - Pojo'da expected data pojo olarak hazirlandigi icin donen response'i da pojo obje'ye donustururuz
     - data typle'in ayni olmasina dikkat edilmeli
     - pojo'da eger katmanli bir yapi varsa en icteki pojo'dan olusturmaya baslamak gerekir
+
+    - jsonschema2pojo.org
+    https://www.jsonschema2pojo.org/  bu linkteki yerden ojo classlari olusturulabiliyor
 
 
 

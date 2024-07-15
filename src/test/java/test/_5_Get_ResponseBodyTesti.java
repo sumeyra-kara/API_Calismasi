@@ -24,7 +24,7 @@ public class _5_Get_ResponseBodyTesti {
         // 2- Expected Data hazirla
         // 3- Response'i kaydet
         Response response = given().when().get(url);
-        response.prettyPrint();
+        // response.prettyPrint();
 
         // 4- Aseert
 

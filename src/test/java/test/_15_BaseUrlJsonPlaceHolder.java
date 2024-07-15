@@ -6,8 +6,7 @@ import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.nullValue;
+import static org.hamcrest.Matchers.*;
 
 public class _15_BaseUrlJsonPlaceHolder extends JsonPlaceHolderBaseUrl { //  extends  keyword ile base url class’ini inherit edelim.
 
@@ -34,17 +33,18 @@ public class _15_BaseUrlJsonPlaceHolder extends JsonPlaceHolderBaseUrl { //  ext
 
         // 1- url hazirla
         // path parametresi 1 tane ise pathparam, path parametreleri birden fazla ise pathparams metodu kullanilir
-        specJsonPlace.pathParam("pp1","posts"); // pp1 ismini kendim verdim genel adlandirma boyledir
+        specJsonPlace.pathParam("pp1","posts"); // pp1 ismini kendim verdim genel adlandirma boyledir // baseurl'2 path param eklemis oluyoruz
 
         // 2- expected data hazirla
         // 3- response'i kaydet
         // Response degerini hesaplarken given() metodundan sonra spec(istenenSpec) metodu yazilir ve
         // when() metodundan sonra yazilan HTTP metodunun icine parametre isimleri { } icinde yazilir.
-        Response response = given().spec(specJsonPlace).when().get("/{pp1}");
+        Response response = given().spec(specJsonPlace).when().get("/{pp1}"); // body gondermedigimiz icin contenttype ve body eklemiyoruz
         response.prettyPrint();
 
         // 4- assertion
-        response.then().assertThat().statusCode(200).body("title", Matchers.hasSize(100));
+        response.then().assertThat().statusCode(200)
+                .body("title", Matchers.hasSize(100)); // title'in 100 tane oldugu
     }
 
 
@@ -56,7 +56,7 @@ public class _15_BaseUrlJsonPlaceHolder extends JsonPlaceHolderBaseUrl { //  ext
         * degerinin “optio dolor molestias sit” oldugunu test edin
          */
         // 1- url hazirla
-        specJsonPlace.pathParams("pp1","posts","pp2",44);
+        specJsonPlace.pathParams("pp1","posts","pp2",44); // birden fazla param varsa pathParams kullanilir
 
         // expected data hazirla
         // response'i kaydet
@@ -64,7 +64,8 @@ public class _15_BaseUrlJsonPlaceHolder extends JsonPlaceHolderBaseUrl { //  ext
         response.prettyPrint();
 
         // 4- assertion
-        response.then().assertThat().statusCode(200).body("title", equalTo("optio dolor molestias sit"));
+        response.then().assertThat().statusCode(200)
+                                        .body("title", equalTo("optio dolor molestias sit"),"userId",is(5));
     }
 
 

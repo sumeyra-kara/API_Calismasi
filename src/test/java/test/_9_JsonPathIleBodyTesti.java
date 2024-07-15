@@ -31,7 +31,6 @@ public class _9_JsonPathIleBodyTesti {
         ve "checkout" tarihinin 2021-06-10
         ve "additionalneeds“in,"wi-fi"
         oldugunu test edin
-
      */
 
 
@@ -58,7 +57,8 @@ public class _9_JsonPathIleBodyTesti {
         // 2- expected Data hazirla
         // 3- Response'i kaydet
 
-        Response response = given().contentType(ContentType.JSON).when().body(reqBody.toString()).post(url);
+        Response response = given().contentType(ContentType.JSON)
+                            .when().body(reqBody.toString()).post(url);
         response.prettyPrint();
 
         // 4 - Assertion -- JSON PATH ILE TEST ETME - response uzerinden json object ile test edeilir

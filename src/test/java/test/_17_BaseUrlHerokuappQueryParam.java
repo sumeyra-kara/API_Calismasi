@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class _17_BaseUrlHerokuappQueryParam  extends HerokuappBaseUrl {
+public class _17_BaseUrlHerokuappQueryParam  extends HerokuappBaseUrl { // baseUrl kullanmak icin
     /**
      * Class icinde 3 Test metodu olusturun ve asagidaki testleri yapin
      * 1- https://restful-booker.herokuapp.com/booking endpointine bir GET request
@@ -58,7 +58,7 @@ public class _17_BaseUrlHerokuappQueryParam  extends HerokuappBaseUrl {
 
         // 1- url hazirla
         // query param'lar da path paramlarr gibi set edilebilir
-        specHerokuApp.pathParam("pp1","booking").queryParam("firstname","John");
+        specHerokuApp.pathParam("pp1","booking").queryParam("firstname","John"); // parmlarin hepsini ekliyoruz
 
         // 2- expected data hazirla (ama yok)
         // 3- Response'i kaydet
@@ -66,15 +66,17 @@ public class _17_BaseUrlHerokuappQueryParam  extends HerokuappBaseUrl {
         response.prettyPrint();
 
         // 4- Assert
-        JsonPath responseJsonpath=response.jsonPath();
+        JsonPath responseJsonpath = response.jsonPath();
         System.out.println(responseJsonpath.getList("bookingid").size());
+
+        int sizeId = responseJsonpath.getList("bookingid").size(); // bookingId'lerin sayisi
 
 
         response
                 .then()
                 .assertThat()
                 .statusCode(200)
-                .body("bookingid", Matchers.hasSize(responseJsonpath.getList("bookingid").size())); //
+                .body("bookingid", Matchers.hasSize(sizeId)); //
     }
 
 
@@ -83,7 +85,7 @@ public class _17_BaseUrlHerokuappQueryParam  extends HerokuappBaseUrl {
     public void test3() {
         /**
          * 3- https://restful-booker.herokuapp.com/booking endpointine gerekli Query
-         *      * parametrelerini yazarak “firstname” degeri “Jim” ve “lastname” degeri “Jackson”
+         *      * parametrelerini yazarak “firstname” degeri “John” ve “lastname” degeri “Smith”
          *      * olan rezervasyon oldugunu test edecek bir GET request gonderdigimizde, donen
          *      * response’un status code’unun 200 oldugunu ve “Jim Jackson” ismine sahip en az bir
          *      * booking oldugunu test edin
@@ -98,17 +100,18 @@ public class _17_BaseUrlHerokuappQueryParam  extends HerokuappBaseUrl {
         Response response = given().when().spec(specHerokuApp).get("/{pp1}");
        // response.prettyPrint();
 
-        // 4
+        // 4 - Assertion
 
         JsonPath responseJsonpath=response.jsonPath();
         System.out.println(responseJsonpath.getList("bookingid").size());
+        int bookingidsize = responseJsonpath.getList("bookingid").size(); // bu surekli degisiir cunku bilgiler surekli degsiiyor
 
 
         response
                 .then()
                 .assertThat()
                 .statusCode(200)
-                .body("bookingid", Matchers.hasSize(responseJsonpath.getList("bookingid").size())); // ????????? hatali veriyyor
+                .body("bookingid", Matchers.hasSize(bookingidsize));
 
 
 

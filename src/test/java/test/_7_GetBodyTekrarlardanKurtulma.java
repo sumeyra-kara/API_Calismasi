@@ -19,6 +19,7 @@ public class _7_GetBodyTekrarlardanKurtulma {
         ve "additionalneeds“in, "Breakfast"
         oldugunu test edin
 
+        !!!! bilgiler surekli guncelledndigi icin bu bilgiler zamanla degisiyor
      */
 
     @Test
@@ -37,10 +38,10 @@ public class _7_GetBodyTekrarlardanKurtulma {
                         .statusCode(200)
                         .contentType("application/json; charset=utf-8")
                         .body("firstname", Matchers.equalTo("Mary"),
-                                "lastname",Matchers.equalTo("Ericsson"),
-                                "totalprice",Matchers.equalTo(416),
+                                "lastname",Matchers.equalTo("Brown"),
+                                "totalprice",Matchers.equalTo(395),
                                 "depositpaid",Matchers.equalTo(false),
-                                "additionalneeds",Matchers.equalTo("Breakfast"));
+                                "additionalneeds",Matchers.nullValue());
 
 
 
@@ -50,10 +51,10 @@ public class _7_GetBodyTekrarlardanKurtulma {
                 .statusCode(200)
                 .contentType("application/json; charset=utf-8")
                 .body("firstname", equalTo("Mary"),
-                        "lastname", equalTo("Ericsson"),
-                        "totalprice", equalTo(416),
+                        "lastname", equalTo("Brown"),
+                        "totalprice", equalTo(395),
                         "depositpaid", equalTo(false),
-                        "additionalneeds", equalTo("Breakfast"));
+                        "additionalneeds", nullValue());
 
          */
 

@@ -78,7 +78,7 @@ public class _12_Post_ExpectedDataVeJsonPathIleAssertion {
         // 4- assert
         // jsonPATH'de noktalarla ilerliyorken, jsonObject'De bir seylern icine katmanlara giriyoruz
 
-        JsonPath respJP = response.jsonPath(); // test etmeye yarayan
+        JsonPath respJP = response.jsonPath(); // test etmeye yariyor. response'u jsonPath'E cevirmis olduk
         Assert.assertEquals(expData.getJSONObject("booking").get("firstname"),respJP.get("booking.firstname"));
 
         Assert.assertEquals(expData.getJSONObject("booking").get("lastname"),respJP.get("booking.lastname"));

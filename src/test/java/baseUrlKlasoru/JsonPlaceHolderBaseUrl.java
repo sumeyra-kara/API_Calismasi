@@ -6,13 +6,14 @@ import org.junit.Before;
 
 public class JsonPlaceHolderBaseUrl {
     protected RequestSpecification specJsonPlace; //  Olusturdugumuz objeyi child class’lardan ulasabilme icin protected yapalim
+    //
 
-    @Before // her methottan onnce otomatik olarak calisiyor
+    @Before // her test methottan once otomatik olarak calisiyor
     public void setUp(){
         // objeye degerler atiyoruz
-        specJsonPlace = new RequestSpecBuilder()
-                .setBaseUri("https://jsonplaceholder.typicode.com")
-                .build();
+        specJsonPlace = new RequestSpecBuilder() // bu class'tan
+                        .setBaseUri("https://jsonplaceholder.typicode.com")
+                        .build();
     }
 
 

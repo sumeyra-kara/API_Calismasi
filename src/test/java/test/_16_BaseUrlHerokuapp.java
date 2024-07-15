@@ -48,18 +48,18 @@ public class _16_BaseUrlHerokuapp extends HerokuappBaseUrl {
         // 3- request gonder ve donen response'i kaydet
 
         Response response=given()
-                .when().spec(specHerokuApp)
-                .get("/{pp1}");
+                         .when().spec(specHerokuApp)
+                         .get("/{pp1}");
 
         // 4- Assertion
-        JsonPath responseJsonpath=response.jsonPath();
-        System.out.println(responseJsonpath.getList("bookingid").size());
+        JsonPath responseJsonpath = response.jsonPath();
+        System.out.println(responseJsonpath.getList("bookingid").size()); // kac tane oldugunu buluruz
 
         response
                 .then()
                 .assertThat()
                 .statusCode(200)
-                .body("bookingid", Matchers.hasSize(2983));
+                .body("bookingid", Matchers.hasSize(2292)); // bu sayi surekli degistigi icin failed veriyor. guncellemek lazim
 
     }
 
@@ -84,7 +84,7 @@ public class _16_BaseUrlHerokuapp extends HerokuappBaseUrl {
          */
         // 1- endpoint ve request body olustur
 
-        specHerokuApp.pathParam("pp1","booking");
+        specHerokuApp.pathParam("pp1","booking"); // endpoint
 
         JSONObject requestBody= new JSONObject();
         JSONObject rezervasyonTarihleriJson= new JSONObject();
@@ -102,9 +102,9 @@ public class _16_BaseUrlHerokuapp extends HerokuappBaseUrl {
         // 2- expected data olustur
         // 3- request gonder ve donen response'i kaydet
 
-        Response response= given().contentType(ContentType.JSON)
-                .when().spec(specHerokuApp).body(requestBody.toString())
-                .post("/{pp1}");
+        Response response= given().contentType(ContentType.JSON) // body oldugu icin  contentType'ini yazmaliyiz
+                           .when().spec(specHerokuApp).body(requestBody.toString())
+                           .post("/{pp1}");
 
         // 4- Assertion
 

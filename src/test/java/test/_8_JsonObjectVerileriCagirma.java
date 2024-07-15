@@ -5,11 +5,9 @@ import org.json.JSONObject;
 import org.junit.Test;
 
 public class _8_JsonObjectVerileriCagirma {
-    // Java'daki yok uzun olsa da JsonObject yoludur
-    // Json path ise ancak response uzerinden kullanabiliriz
-
+    // Java'daki yol uzun olsa da JsonObject yoludur
+    // Jsonpath ise ancak response uzerinden kullanabiliriz
     /*
-
       kisiBilgisi = {
         "firstName":"John",
         "lastName":"Doe",
@@ -27,7 +25,6 @@ public class _8_JsonObjectVerileriCagirma {
                           "type":"home"
                         }]
                 }
-
      */
 
     @Test

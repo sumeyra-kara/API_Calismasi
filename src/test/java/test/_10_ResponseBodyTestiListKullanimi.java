@@ -10,9 +10,8 @@ import static org.hamcrest.Matchers.hasItems;
 
 public class _10_ResponseBodyTestiListKullanimi {
     /**
-     * http://dummy.restapiexample.com/api/v1/employees url'ine bir GET request
-     * yolladigimizda
-     * donen Response'in
+     * http://dummy.restapiexample.com/api/v1/employees url'ine bir GET request yolladigimizda donen Response'in
+
      * status code'unun 200,
      * ve content type'inin Aplication.JSON,
      * ve response body'sindeki
