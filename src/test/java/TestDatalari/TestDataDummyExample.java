@@ -64,7 +64,7 @@ public class TestDataDummyExample {
         Map<String,Object> bodyMap= new HashMap<>();
         Map<String,Object> dataMap= new HashMap<>();
 
-        dataMap.put("id",3.0);
+        dataMap.put("id",3.0); // map'de int ler double olrak yazilir o yuzden bu sekilde yazildi
         dataMap.put("employee_name","Ashton Cox");
         dataMap.put("employee_salary",86000.0);
         dataMap.put("employee_age",66.0);

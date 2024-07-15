@@ -11,7 +11,7 @@ import pojos.PlaceHolderRequestBodyPOJO;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
-public class _25_Put_PojoClass extends JsonPlaceHolderBaseUrl {
+public class _25_Put_PojoClass extends JsonPlaceHolderBaseUrl { // spectden faydalanmak icin
     // Pojo jAVA OBJESIDIR
    /**
         https://jsonplaceholder.typicode.com/posts/70 url'ine
@@ -40,7 +40,7 @@ public class _25_Put_PojoClass extends JsonPlaceHolderBaseUrl {
     @Test
     public void test01(){
         // 1- request url ve body olustur
-        specJsonPlace.pathParams("pp1","posts","pp2","70");
+        specJsonPlace.pathParams("pp1","posts","pp2","70"); // baseURL'ye eklenecek endpointler
 
         PlaceHolderRequestBodyPOJO requestBodyPojo = new PlaceHolderRequestBodyPOJO("Ahmet","Merhaba",10,70);
 
@@ -57,7 +57,7 @@ public class _25_Put_PojoClass extends JsonPlaceHolderBaseUrl {
         // response.jsonPath(); -- eskiden bunu yapmistik
         // response.as(Map.class); -- map icin buydu
 
-        PlaceHolderRequestBodyPOJO responsePojo = response.as(PlaceHolderRequestBodyPOJO.class);
+        PlaceHolderRequestBodyPOJO responsePojo = response.as(PlaceHolderRequestBodyPOJO.class); // response'u da pojo yapiyoruz burada
 
         // 4- Assert
         // expected data (Pojo) <====> response (Pojo)

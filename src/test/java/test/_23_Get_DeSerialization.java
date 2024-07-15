@@ -44,13 +44,14 @@ public class _23_Get_DeSerialization extends BaseUrlDummyExample {
         specDummyExample.pathParams("pp1","employee","pp2","3");
 
         // 2- Soruda varsa expected data olustur
-        Map<String,Object> expectedData = TestDataDummyExample.mapBodyOlustur();
+        Map<String,Object> expectedData = TestDataDummyExample.mapBodyOlustur();// expected data bir map
 
         // 3- Request gonder donen response'i kaydet
-        Response response= given().spec(specDummyExample)
-                .when()
-                .get("{pp1}/{pp2}");
-        Map<String,Object> responseMap= response.as(Map.class);
+        Response response =  given().spec(specDummyExample) // body olmadigi icin content type'i koymuyoruz
+                            .when()
+                            .get("{pp1}/{pp2}");
+
+        Map<String,Object> responseMap= response.as(Map.class); // response'i map'e cevirdik cunku assert yapmak icin her ikisinin data type'i ayni olmali
         // response objesini De-Serialization ile Map’e cevirmek icin Gson kutuphanesi gerekli
 
         // 4- Assertion
@@ -61,7 +62,7 @@ public class _23_Get_DeSerialization extends BaseUrlDummyExample {
         assertEquals(expectedData.get("message"),responseMap.get("message"));
         assertEquals(expectedData.get("status"),responseMap.get("status"));
 
-        // map icerisinde map oldugu icin cating yapmak gerekiyor
+        // map icerisinde map oldugu icin casting yapmak gerekiyor
         assertEquals(((Map)expectedData.get("data")).get("profile_image"),((Map)responseMap.get("data")).get("profile_image"));
 
         assertEquals(((Map) expectedData.get("data")).get("employee_name"),((Map) responseMap.get("data")).get("employee_name"));

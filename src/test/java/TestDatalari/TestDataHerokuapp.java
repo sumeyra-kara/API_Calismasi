@@ -122,7 +122,7 @@ public class TestDataHerokuapp {
                         }
      */
 
-    public static Map<String,Object> responseBodyMapOlustur(){
+    public static Map<String,Object> responseBodyMapOlustur(){ // expected data / response body icin
 
         Map<String,Object> responseBodyMap= new HashMap<>();
 

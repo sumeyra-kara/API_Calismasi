@@ -53,13 +53,14 @@ public class _24_Post_Deserialization extends HerokuappBaseUrl {
         Map<String,Object> requestBodyMap= TestDataHerokuapp.requestBodyMapOlustur();
 
         // 2- Soruda varsa expected data olustur
-        Map<String,Object> expectedData= TestDataHerokuapp.responseBodyMapOlustur();
+        Map<String,Object> expectedData = TestDataHerokuapp.responseBodyMapOlustur();
 
         // 3- Request gonder donen response'i kaydet
-        Response response= given().contentType(ContentType.JSON).spec(specHerokuApp)
-                .when().body(requestBodyMap)
-                .post("{pp1}");
-        Map<String,Object> responseMap= response.as(HashMap.class);
+        Response response =  given().contentType(ContentType.JSON).spec(specHerokuApp) // body koydugumuz icin content type'i ekledik
+                            .when().body(requestBodyMap)
+                            .post("{pp1}");
+
+        Map<String,Object> responseMap= response.as(HashMap.class); // response map'e cevrildi
 
         // 4- Assertion
         assertEquals(((Map)expectedData.get("booking")).get("firstname"),((Map)responseMap.get("booking")).get("firstname"));
@@ -73,10 +74,10 @@ public class _24_Post_Deserialization extends HerokuappBaseUrl {
         assertEquals(((Map) expectedData.get("booking")).get("depositpaid"),((Map) responseMap.get("booking")).get("depositpaid"));
 
         assertEquals(((Map)((Map) expectedData.get("booking")).get("bookingdates")).get("checkin"),
-                    ((Map)((Map) expectedData.get("booking")).get("bookingdates")).get("checkin"));
+                            ((Map)((Map) expectedData.get("booking")).get("bookingdates")).get("checkin"));
 
         assertEquals(((Map)((Map) expectedData.get("booking")).get("bookingdates")).get("checkout"),
-                     ((Map)((Map) expectedData.get("booking")).get("bookingdates")).get("checkout"));
+                            ((Map)((Map) expectedData.get("booking")).get("bookingdates")).get("checkout"));
 
 
     }

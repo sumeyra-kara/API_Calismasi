@@ -43,9 +43,10 @@ public class _4_Put_ResponseBilgileriAssert {
         // bunu da hemen given() methodundan sonra pre-condition olarak belirtebiliriz
 
         Response response = given()
-                                .contentType(ContentType.JSON)
+                                .contentType(ContentType.JSON) // body oldugu icin body'in type'ini de belirtmemiz gerekir
                             .when()
-                                .body(reqBody.toString()).put(url);
+                                .body(reqBody.toString()) // json objesini string'e cevirmis olduk
+                            .put(url);
 
         response.prettyPrint();
 

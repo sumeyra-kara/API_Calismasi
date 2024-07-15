@@ -15,7 +15,7 @@ public class _01_Get_ApiSorgulama {
     ve content type’inin application/json; charset=utf-8,
     ve Server isimli Header’in degerinin Cowboy,
     ve status Line’in HTTP/1.1 200 OK
-    ve response suresinin 5 sn’den kisa oldugunu manuel olarak test ediniz.
+    ve response suresinin 5 sn’den kisa oldugunu manuel olarak test ediniz. // manuel diyince sout seklinde yani
      */
 
     // *********** ADIMLAR ************+
@@ -29,6 +29,7 @@ public class _01_Get_ApiSorgulama {
     @Test
     public void get01(){ // manuel test yapiyoruz burada
         // 1- Gonderecegimiz Request icin gerekli olan Url ve ihtiyacimiz varsa request body hazirla
+        // get icin body hazirlamaya gerek yok
         String url = "https://restful-booker.herokuapp.com/booking/10"; // 10 id'e ait olan
 
         // 2- Eger soruda bize acikca verilmisse Expected Data hazirla

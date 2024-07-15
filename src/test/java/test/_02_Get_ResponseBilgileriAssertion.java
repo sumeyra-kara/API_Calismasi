@@ -12,7 +12,7 @@ public class _02_Get_ResponseBilgileriAssertion {
     status code’unun 200,
     ve content type’inin application/json; charset=utf-8,
     ve Server isimli Header’in degerinin Cowboy,
-    ve status Line’in HTTP/1.1 200 OK
+    ve status Line’in HTTP/1.1 200 OK oldugunu test edin otomasyon ile
      */
 
     @Test

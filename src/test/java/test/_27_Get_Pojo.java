@@ -48,7 +48,7 @@ public class _27_Get_Pojo extends BaseUrlDummyExample {
         // 3 - Response olustur, request gonderip sonucu response'a ata
 
         Response response= given().spec(specDummyExample)
-                                .when()
+                                .when()  // varsa body kismi buraya
                                 .get("{pp1}/{pp2}");
 
         /*
@@ -71,7 +71,7 @@ public class _27_Get_Pojo extends BaseUrlDummyExample {
         // Bu durumda testimize devam etmek icin response'i Jsonpath'e cevirebiliriz
         // expectedResponseBody (Pojo) <=====> ResponseJsonPath
 
-        // bunlar pojo ile
+        // bunlar pojo ile---burada kendisi isimleri degistirdigi icin hazir ceviriciler yuzunden
         PojoDummyExampleResponse resPojo = response.as(PojoDummyExampleResponse.class);
         assertEquals(expectedResponseBody.getStatus(), resPojo.getStatus());
         System.out.println("resPojo.getMessage() = " + resPojo.getMessage());

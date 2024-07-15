@@ -39,7 +39,7 @@ public class _22_Put_DeSerialization extends JsonPlaceHolderBaseUrl {
     @Test
     public void test01(){
         // 1- endpoint ve request body olustur
-        specJsonPlace.pathParams("pp1","posts","pp2",70);
+        specJsonPlace.pathParams("pp1","posts","pp2",70); // path paramatreleri ekliyoruz
 
         // Request body'sini Map olarak olusturalim
         Map<String,Object> requestBodyMap= TestDataJsonPlaceholder.requestBodyOlusturMap();
