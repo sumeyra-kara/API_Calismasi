@@ -51,7 +51,7 @@ public class _19__Put_TestDataClassKullanimi extends JsonPlaceHolderBaseUrl {
                             .put("/{pp1}/{pp2}");
 
         // 4- Assertion
-        JsonPath responseJP= response.jsonPath();
+        JsonPath responseJP= response.jsonPath(); // actual
 
         assertEquals(TestDataJsonPlaceholder.basariliSorguStatusCode,response.statusCode());// status kodunun 200,
         assertEquals(TestDataJsonPlaceholder.contentType,response.contentType());// content type’inin “application/json; charset=utf-8”,

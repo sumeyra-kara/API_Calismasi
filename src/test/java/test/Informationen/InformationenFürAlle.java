@@ -61,6 +61,10 @@ public class InformationenFürAlle {
             * inheritance metotlarini kullanarak base url’i bulundugu class’dan kullanirlar.
             * Boylece base url’de yapilacak bir degisiklikte tum class’lardaki url’leri kontrol edip duzeltmek
             * yerine base url’in bulundugu class’da tek bir degisiklik yapmak yeterli olmaktadir
+      - Test datasi olusturulmali - testte ne kullanmk istiyorsak method variable vs hepsini test datalarina koyabiliiriz
+
+      -  jsonpath ile nokta seklinde ilerlenir, jsonObject'De katmanli olarak ilerlenir mesela ;
+         assertEquals(expectedData.getJSONObject("data").getString("profile_image"),responseJP.getString("data.profile_image"));
 
 
      ** Json Object ***

@@ -39,18 +39,17 @@ public class _20_Get_TestDataKullanimi extends BaseUrlDummyExample {
         specDummyExample.pathParams("pp1","employee","pp2","3");
 
         // 2- expected data olustur
-
-        JSONObject expectedData= TestDataDummyExample
-                .jsonResponseBodyOlustur(3,
-                        "Ashton Cox",
-                        86000,
-                        66,
-                        "");
+        JSONObject expectedData = TestDataDummyExample
+                                        .jsonResponseBodyOlustur(3,
+                                                                "Ashton Cox",
+                                                                86000,
+                                                                66,
+                                                                "");
 
         // 3- request gonder ve donen response'i kaydet
         Response response= given().spec(specDummyExample).
-                when().
-                get("{pp1}/{pp2}");
+                            when().
+                            get("{pp1}/{pp2}");
 
         // 4- assertion
         //   Expected data : JSONObject
@@ -64,24 +63,26 @@ public class _20_Get_TestDataKullanimi extends BaseUrlDummyExample {
         //ve body’sinin asagidaki gibi oldugunu test edin.
 
         assertEquals(expectedData.getJSONObject("data").getString("profile_image"),
-                responseJP.getString("data.profile_image"));
+                         responseJP.getString("data.profile_image"));
 
         assertEquals(expectedData.getJSONObject("data").getString("employee_name"),
-                responseJP.getString("data.employee_name"));
+                        responseJP.getString("data.employee_name"));
 
         assertEquals(expectedData.getJSONObject("data").getInt("employee_salary"),
-                responseJP.getInt("data.employee_salary"));
+                            responseJP.getInt("data.employee_salary"));
 
         assertEquals(expectedData.getJSONObject("data").getInt("id"),
-                responseJP.getInt("data.id"));
+                        responseJP.getInt("data.id"));
 
         assertEquals(expectedData.getJSONObject("data").getInt("employee_age"),
-                responseJP.getInt("data.employee_age"));
+                         responseJP.getInt("data.employee_age"));
 
         assertEquals(expectedData.getString("message"),responseJP.getString("message"));
 
         assertEquals(expectedData.getString("status"),responseJP.getString("status"));
     }
+
+    // jsonpath ile nokta seklinde ilerlenir, jsonObject'De katmanli olarak ilerlenir
 
 
 }

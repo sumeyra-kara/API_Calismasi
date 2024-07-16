@@ -51,12 +51,12 @@ public class _18_Get_TestDataClassKullanimi extends JsonPlaceHolderBaseUrl {
         // 3- request gonder ve donen response'i kaydet
 
         Response response= given().spec(specJsonPlace).when().get("{pp1}/{pp2}");
-        JsonPath responseJsonpath= response.jsonPath(); // assert yapmak icin jsonpath'e donusturmek gerek
+        JsonPath responseJsonpath= response.jsonPath(); // assert yapmak icin jsonpath'e donusturmek gerek // actual bilgiler
 
         // 4- Assertion
         // status kodunun 200 ve response body’sinin asagida verilen ile ayni oldugunu test ediniz
         // assertEquals(TestDataJsonPlaceholder.basariliSorguStatusCode,response.statusCode());
-
+        //             expected                   actual
         assertEquals(expData.get("userId"),responseJsonpath.get("userId"));
         assertEquals(expData.get("id"),responseJsonpath.get("id"));
         assertEquals(expData.get("title"),responseJsonpath.get("title"));
